@@ -4,7 +4,8 @@ from camera.model import CameraModel
 from camera.postprocessing import generate_submit
 from camera.train_utils import predict_test
 import numpy as np
-from sklearn.metrics import confusion_matrix
+import matplotlib.pyplot as plt
+from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay
 from torch.utils.data import DataLoader
 import argparse
 
@@ -37,9 +38,20 @@ def main():
     true_labels = np.array(true_labels)
     print("true", true_labels)
     print("pred", predicted_labels)
-    confusion_mat = confusion_matrix(true_labels, predicted_labels)
-    print("Confusion Matrix:")
-    print(confusion_mat)
+    labels = ["Huawei_P20Lite_Frontal", "Huawei_P20Lite_Rear"]
+    cm = confusion_matrix(true_labels, predicted_labels)
+    cm = cm.astype('float') / cm.sum(axis=1)[:, np.newaxis]
+    plt.style.use('seaborn')
+    plt.rcParams.update({'font.size': 12})
+    disp = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=labels)
+    plt.style.use('seaborn')
+    fig, ax = plt.subplots(figsize=(15,15))
+    disp.plot(cmap=plt.cm.Blues, xticks_rotation=90, ax=ax, values_format='.2f')
+    plt.grid(False)
+    plt.tight_layout()
+    plt.savefig("cm.pdf", format="pdf", pad_inches=5)
+    plt.clf()
+    plt.close()
 
 if __name__ == "__main__":
     main()
