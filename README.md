@@ -12,7 +12,7 @@ This repo contains code for training and predicting single Resnet50 model.
 
 You will need some time to train a model. It takes ~4 hours on a single Tesla M40.
 
-# Testing 🚀
+## Testing 🚀
 
 Just call
 
