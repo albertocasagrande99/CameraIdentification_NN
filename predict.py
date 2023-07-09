@@ -36,8 +36,6 @@ def main():
 
     true_labels = test_dataset._labels
     true_labels = np.array(true_labels)
-    print("true", true_labels)
-    print("pred", predicted_labels)
     labels = ["Huawei_P20Lite_Frontal", "Huawei_P20Lite_Rear"]
     cm = confusion_matrix(true_labels, predicted_labels)
     cm = cm.astype('float') / cm.sum(axis=1)[:, np.newaxis]
