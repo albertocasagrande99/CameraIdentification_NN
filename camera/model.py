@@ -57,10 +57,12 @@ class Model(SerializableModule):
 
 
 class CameraModel(object):
-    def __init__(self, model=None):
+    def __init__(self, model=None, resume_training=0):
         if model is None:
             model = Model()
         self._torch_single_model = model
+        if resume_training == 1:
+            self._torch_single_model.load_state_dict(torch.load("model.pth"))
         self._torch_model = nn.DataParallel(self._torch_single_model).cuda()
 
         self._optimizer = torch.optim.Adam(self._torch_model.parameters(), lr=0.0001)
