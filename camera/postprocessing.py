@@ -13,7 +13,7 @@ CLASSES = [
 
 
 def _geometric_mean(list_preds):
-    result = np.ones((60, 2))
+    result = np.ones((291, 2))
     for predict in list_preds:
         result *= predict
     result **= 1. / len(list_preds)
