@@ -7,8 +7,6 @@ import copy
 TTA_COUNT = 1
 
 CLASSES = [
-    "Huawei_P20Lite_Frontal",
-    "Huawei_P20Lite_Rear"
     "Apple_iPadmini5_Frontal",
     "Apple_iPadmini5_Rear", 
     "Apple_iPhone13_Frontal", 
