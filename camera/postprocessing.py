@@ -9,6 +9,22 @@ TTA_COUNT = 1
 CLASSES = [
     "Huawei_P20Lite_Frontal",
     "Huawei_P20Lite_Rear"
+    "Apple_iPadmini5_Frontal",
+    "Apple_iPadmini5_Rear", 
+    "Apple_iPhone13_Frontal", 
+    "Apple_iPhone13_Rear", 
+    "Huawei_P20Lite_Frontal", 
+    "Huawei_P20Lite_Rear", 
+    "Motorola_MotoG6Play_Frontal", 
+    "Motorola_MotoG6Play_Rear", 
+    "Samsung_GalaxyA71_Frontal", 
+    "Samsung_GalaxyA71_Rear", 
+    "Samsung_GalaxyTabA_Frontal", 
+    "Samsung_GalaxyTabA_Rear", 
+    "Samsung_GalaxyTabS5e_Frontal", 
+    "Samsung_GalaxyTabS5e_Rear", 
+    "Sony_XperiaZ5_Frontal", 
+    "Sony_XperiaZ5_Rear"
 ]
 
 
