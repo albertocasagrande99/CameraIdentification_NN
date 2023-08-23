@@ -115,7 +115,7 @@ class CameraModel(object):
             y = y.cpu().numpy()
 
             accuracy = accuracy_score(y, y_pred.argmax(axis=-1))
-            loss = log_loss(y, y_pred, eps=1e-6, labels=list(range(2)))
+            loss = log_loss(y, y_pred, eps=1e-6, labels=list(range(16)))
 
             if mean_loss is None:
                 mean_loss = loss
