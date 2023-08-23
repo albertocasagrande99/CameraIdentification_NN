@@ -11,7 +11,7 @@ import torch.nn.functional as F
 import torch.nn as nn
 import time
 
-NUM_CLASSES = 2
+NUM_CLASSES = 16
 
 
 class SerializableModule(nn.Module):
