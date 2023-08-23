@@ -29,7 +29,7 @@ CLASSES = [
 
 
 def _geometric_mean(list_preds):
-    result = np.ones((291, 2))
+    result = np.ones((781, 16))
     for predict in list_preds:
         result *= predict
     result **= 1. / len(list_preds)
@@ -55,13 +55,13 @@ def _compute_score_with_coefficients(predicts, coefficients):
     _, counter = _get_labels_distribution(predicts, coefficients)
 
     score = 0.
-    for label in range(2):
-        score += min(100. * counter[label] / len(predicts), 2)
+    for label in range(16):
+        score += min(100. * counter[label] / len(predicts), 16)
     return score
 
 
 def _find_best_coefficients(predicts, alpha=0.001, iterations=10000):
-    coefficients = [1] * 2
+    coefficients = [1] * 16
 
     best_coefficients = coefficients[:]
     best_score = _compute_score_with_coefficients(predicts, coefficients)
