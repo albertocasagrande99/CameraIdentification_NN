@@ -1,7 +1,7 @@
 from sklearn.metrics import accuracy_score, log_loss
 import matplotlib.pyplot as plt
 
-NUM_EPOCH = 2
+NUM_EPOCH = 10
 
 
 def predict_test(model, test_loader):
