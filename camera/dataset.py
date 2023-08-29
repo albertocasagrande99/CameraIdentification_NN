@@ -36,19 +36,6 @@ class CameraDataset(data.Dataset):
                 self._labels.append(label)
 
         self._manip_labels = [-1] * len(self._files)
-
-        if expand_dataset:
-            files = self._files
-            labels = self._labels
-
-            self._files = []
-            self._labels = []
-            self._manip_labels = []
-            for index in range(len(files)):
-                self._files.extend([files[index]] * TTA_COUNT)
-                self._labels.extend([labels[index]] * TTA_COUNT)
-                self._manip_labels.extend(list(range(TTA_COUNT)))
-
         self._augmentator = augmentator
 
     def _preprocess(self, index):

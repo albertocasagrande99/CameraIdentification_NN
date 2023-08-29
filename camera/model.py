@@ -66,7 +66,7 @@ class CameraModel(object):
         self._torch_model = nn.DataParallel(self._torch_single_model).cuda()
 
         self._optimizer = torch.optim.Adam(self._torch_model.parameters(), lr=0.0001)
-        self._scheduler = ReduceLROnPlateau(self._optimizer, factor=0.5, patience=5,
+        self._scheduler = ReduceLROnPlateau(self._optimizer, factor=0.5, patience=3,
                                             min_lr=1e-6, epsilon=1e-5, verbose=1, mode='min')
         self._optimizer.zero_grad()
         self._criterion = nn.CrossEntropyLoss()

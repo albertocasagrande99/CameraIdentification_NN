@@ -25,7 +25,7 @@ def main():
     test_augmentator = Augmentator(in_train_mode=False)
 
     train_dataset = CameraDataset(args.train_files, train_augmentator)
-    val_dataset = CameraDataset(args.val_files, test_augmentator, expand_dataset=True)
+    val_dataset = CameraDataset(args.val_files, test_augmentator, expand_dataset=False)
 
     train_loader = DataLoader(train_dataset, batch_size=args.batch_size,
                               shuffle=True, drop_last=True, num_workers=PROCESS_COUNT)

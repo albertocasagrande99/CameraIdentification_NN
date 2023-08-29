@@ -16,16 +16,16 @@ class Augmentator(object):
 
         self._manip_list = []
 
-        self._manip_list.append(lambda img: Augmentator._jpg_manip(img, 70))
-        self._manip_list.append(lambda img: Augmentator._jpg_manip(img, 90))
+        #self._manip_list.append(lambda img: Augmentator._jpg_manip(img, 70))
+        #self._manip_list.append(lambda img: Augmentator._jpg_manip(img, 90))
 
-        self._manip_list.append(lambda img: Augmentator._gamma_manip(img, 0.8))
-        self._manip_list.append(lambda img: Augmentator._gamma_manip(img, 1.2))
+        #self._manip_list.append(lambda img: Augmentator._gamma_manip(img, 0.8))
+        #self._manip_list.append(lambda img: Augmentator._gamma_manip(img, 1.2))
 
-        self._manip_list.append(lambda img: Augmentator._bicubic_manip(img, 0.5))
-        self._manip_list.append(lambda img: Augmentator._bicubic_manip(img, 0.8))
-        self._manip_list.append(lambda img: Augmentator._bicubic_manip(img, 1.5))
-        self._manip_list.append(lambda img: Augmentator._bicubic_manip(img, 2.0))
+        #self._manip_list.append(lambda img: Augmentator._bicubic_manip(img, 0.5))
+        #self._manip_list.append(lambda img: Augmentator._bicubic_manip(img, 0.8))
+        #self._manip_list.append(lambda img: Augmentator._bicubic_manip(img, 1.5))
+        #self._manip_list.append(lambda img: Augmentator._bicubic_manip(img, 2.0))
 
         self._transform = Augmentator._get_transforms()
 
@@ -59,19 +59,19 @@ class Augmentator(object):
         return result
 
     def __call__(self, image, aug_type):
-        if 0 <= aug_type <= 7:
-            manip_func = self._manip_list[aug_type]
-            image = manip_func(image)
-        elif aug_type == 8:
-            image = np.rot90(image)
-        elif aug_type == 9:
-            image = np.rot90(image, 2)
-        elif aug_type == 10:
-            image = np.rot90(image, -1)
+        #if 0 <= aug_type <= 7:
+        #    manip_func = self._manip_list[aug_type]
+        #    image = manip_func(image)
+        #elif aug_type == 8:
+        #    image = np.rot90(image)
+        #elif aug_type == 9:
+        #    image = np.rot90(image, 2)
+        #elif aug_type == 10:
+        #    image = np.rot90(image, -1)
 
-        if self._in_train_mode and random.random() < MANIP_PROBABILITY:
-            manip_func = random.choice(self._manip_list)
-            image = manip_func(image)
+        #if self._in_train_mode and random.random() < MANIP_PROBABILITY:
+        #    manip_func = random.choice(self._manip_list)
+        #    image = manip_func(image)
 
         image = self._transform(image)
         return image
