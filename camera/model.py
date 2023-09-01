@@ -101,7 +101,7 @@ class CameraModel(object):
         X = X.cuda(non_blocking=True)
         with torch.no_grad():
             X = Variable(X, requires_grad=False)
-        y_pred = self._torch_model(X)
+            y_pred = self._torch_model(X)
         y_pred = F.softmax(y_pred, dim=-1)
         return y_pred.cpu().data.numpy()
 
