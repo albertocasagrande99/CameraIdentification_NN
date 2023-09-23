@@ -202,7 +202,6 @@ class CameraModel(object):
         # Move the legend to the right of the plot
         legend = plt.legend(bbox_to_anchor=(1.04, 1), loc="upper left")  # Adjust the bbox_to_anchor values as needed
         # Increase the marker size in the legend
-        # Increase the marker size in the legend
         for handle in legend.legendHandles:
             if isinstance(handle, matplotlib.lines.Line2D):  # Check if it's a scatter plot marker
                 handle.set_markersize(14)  # Adjust the marker size as needed
