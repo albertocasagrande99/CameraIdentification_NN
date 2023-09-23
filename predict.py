@@ -11,7 +11,6 @@ import argparse
 
 PROCESS_COUNT = 2
 
-
 def main():
     parser = argparse.ArgumentParser("Camera Kaggle competition PREDICT")
     parser.add_argument("--test_files", required=True)
@@ -36,7 +35,7 @@ def main():
 
     true_labels = test_dataset._labels
     true_labels = np.array(true_labels)
-    labels = ['Apple_iPadmini5_F', 'Apple_iPadmini5_R', 'Apple_iPhone13_F', 'Apple_iPhone13_R', 'Huawei_P20Lite_F', 'Huawei_P20Lite_R', 'Motorola_MotoG6Play_F', 'Motorola_MotoG6Play_R', 'Samsung_GalaxyA71_F', 'Samsung_GalaxyA71_R', 'Samsung_GalaxyTabA_F', 'Samsung_GalaxyTabA_R', 'Samsung_GalaxyTabS5e_F', 'Samsung_GalaxyTabS5e_R', 'Sony_XperiaZ5_F', 'Sony_XperiaZ5_R']
+    labels = ['Apple_iPadmini5_R', 'Apple_iPhone13_R', 'Huawei_P20Lite_R', 'Motorola_MotoG6Play_R', 'Samsung_GalaxyA71_R', 'Samsung_GalaxyTabA_R', 'Samsung_GalaxyTabS5e_R', 'Sony_XperiaZ5_R']
     cm = confusion_matrix(true_labels, predicted_labels)
     cm = cm.astype('float') / cm.sum(axis=1)[:, np.newaxis]
     plt.style.use('seaborn')
