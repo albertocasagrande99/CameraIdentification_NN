@@ -1,4 +1,4 @@
-# Camera Model Identification through neural networks
+# Camera Model Identification through CNN
 
 This repo is based on [this work](https://github.com/PavelOstyakov/camera_identification/), and contains code for training a Resnet50 model for camera model identification. 📈
 
