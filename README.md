@@ -2,6 +2,10 @@
 
 This repo is based on [this work](https://github.com/PavelOstyakov/camera_identification/), and contains code for training a Resnet50 model for camera model identification. 📈
 
+## Dataset 📁
+The *DivNoise* dataset can be downloaded at [https://divnoise.fotoverifier.eu/](https://divnoise.fotoverifier.eu/). Part 1 refers to smartphones, tablets and webcams, while the remaining parts contain the Canon cameras. 
+To properly train and test the network, the images must be rearranged into train, validation and test splits for each camera.
+
 ## Training 🏃
 
 - Split the dataset into train, validation and test sets.
